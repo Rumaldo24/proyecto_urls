@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URLs Filtradas</title>
+    <style>
+      /* Estilos generales */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* Contenedor principal */
+      .container {
+        background-color: #fff;
+        padding: 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+      }
+
+      /* Encabezado y enlace en la misma fila */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      /* Estilos del encabezado */
+      h1 {
+        color: #0052cc;
+        font-size: 2rem;
+      }
+
+      /* Estilo del enlace */
+      a {
+        padding: 10px 20px;
+        background-color: #0052cc;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      a:hover {
+        background-color: #003d99;
+      }
+
+      /* Estilos del párrafo */
+      p {
+        font-size: 1.2rem;
+        color: #333;
+      }
+
+      /* Estilos de la lista ordenada */
+      ol {
+        padding: 0;
+        margin: 20px 0;
+        list-style-type: decimal;
+        text-align: left;
+      }
+
+      ol li {
+        background-color: #e0f7fa;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: #00796b;
+      }
+
+      /* Ajustes responsivos */
+      @media (max-width: 600px) {
+        .container {
+          padding: 20px;
+          width: 90%;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        a {
+          padding: 8px 15px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Encabezado con el título y el enlace alineados -->
+      <div class="header">
+        <h1>Resultado</h1>
+        <a href="{{ url_for('index') }}">Subir otro archivo</a>
+      </div>
+
+      <p>Total de URLs válidos: {{ urls|length }}</p>
+      <!-- Muestra el total de URLs válidas -->
+
+      {% if urls %}
+      <h2>Aquí las URLs:</h2>
+      <ol>
+        {% for url in urls %}
+        <li>{{ url }}</li>
+        <!-- Lista de URLs válidas con numeración -->
+        {% endfor %}
+      </ol>
+      {% else %}
+      <p>No se encontraron URLs que cumplan con los criterios.</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
