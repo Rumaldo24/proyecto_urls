@@ -73,4 +73,4 @@ El algoritmo en su versión básica es capaz de procesar archivos grandes de man
 En pruebas con archivos grandes (por ejemplo, varios millones de líneas), el algoritmo debería procesar las URLs en segundos o minutos, dependiendo del tamaño del archivo y del hardware en el que se ejecute.
 
 
-[Parte 3-Desarrollo de un Algoritmo Eficiente.txt](https://github.com/user-attachments/files/17249509/Parte.3-Desarrollo.de.un.Algoritmo.Eficiente.txt)
+[Desarrollo de un Algoritmo Eficiente.txt](https://github.com/user-attachments/files/17249509/Parte.3-Desarrollo.de.un.Algoritmo.Eficiente.txt)
