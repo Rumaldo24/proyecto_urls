@@ -11,14 +11,6 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
 def procesar_urls(archivo):
     urls_unicas = set()
 
-    # Leer el archivo subido y procesar las URLs
-    # with open(file_path, 'r') as file:
-    #     for linea in file:
-    #         url = linea.strip()
-    #         if 'shop' in url and url.endswith('.html'):
-    #             urls_unicas.add(url)
-
-    # return urls_unicas
     # Abrir el archivo de manera eficiente para leer línea por línea
     with open(archivo, 'r') as file:
         for url in (line.strip() for line in file):
